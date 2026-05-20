@@ -1,0 +1,19 @@
+html, body {
+    
+    background-color:rgb(252, 249, 238);
+    background-image: url(../index/Martin\ Grøtliens\ Samlede\ Tjenester.png);
+    background-size: 100%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: 10px 70px;
+
+
+}
+
+
+body {
+    font: 1em sans-serif;
+    
+    
+}
+

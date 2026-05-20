@@ -1,0 +1,88 @@
+export const planetConfig = {
+  sun: {
+    radius: 5,
+    texture: "sun.jpg",
+    position: 0,
+    rotationSpeed: 0.001,
+    orbitSpeed: 0.0001,
+  },
+  mercury: {
+    radius: 0.5,
+    texture: "mercury.jpg",
+    position: 10,
+    rotationSpeed: 0.005,
+    orbitSpeed: 4.15,
+  },
+  venus: {
+    radius: 0.8,
+    texture: "venus.jpg",
+    position: 15,
+    rotationSpeed: 0.004,
+    orbitSpeed: 1.62,
+  },
+  earth: {
+    radius: 1,
+    texture: "assets/earthHD.jpg",
+    position: 20,
+    rotationSpeed: 0.003,
+    orbitSpeed: 1,
+    tilt: 23.5,
+    normalMap: "assets/earth_normal_map.jpeg",
+    normalScale: 0.05,
+    specularMap: "assets/earth_specular_map.tif",
+    specular: "grey",
+    displacementMap: "assets/earth_bathymetry.jpg",
+    displacementScale: 0,
+    cloudTexture: "assets/earth_clouds2.jpg",
+    cloudScale: 1.01,
+    cloudRotationSpeed: 0.0005,
+  },
+  mars: {
+    radius: 0.7,
+    texture: "mars.jpg",
+    position: 25,
+    rotationSpeed: 0.0025,
+    orbitSpeed: 0.53,
+  },
+  jupiter: {
+    radius: 2,
+    texture: "jupiter.jpg",
+    position: 35,
+    rotationSpeed: 0.002,
+    orbitSpeed: 0.084,
+  },
+  saturn: {
+    radius: 1.8,
+    texture: "saturn.jpg",
+    position: 45,
+    rotationSpeed: 0.0015,
+    orbitSpeed: 0.034,
+  },
+  uranus: {
+    radius: 1.2,
+    texture: "uranus.jpg",
+    position: 55,
+    rotationSpeed: 0.001,
+    orbitSpeed: 0.012,
+  },
+  neptune: {
+    radius: 1.1,
+    texture: "neptune.jpg",
+    position: 65,
+    rotationSpeed: 0.0005,
+    orbitSpeed: 0.006,
+  },
+  moon: {
+    radius: 0.27,
+    texture: "moon.jpg",
+    position: 2,
+    rotationSpeed: 0.002,
+    orbitSpeed: 13.37,
+  },
+};
+
+console.log(
+  "Earth cloud config:",
+  planetConfig.earth.cloudTexture,
+  planetConfig.earth.cloudScale
+);

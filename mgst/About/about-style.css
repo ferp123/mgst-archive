@@ -1,0 +1,129 @@
+html, body {
+    
+    background-color:rgb(252, 249, 238);
+    background-image: url(../index/Martin\ Grøtliens\ Samlede\ Tjenester.png);
+    background-size: 100%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: 10px 70px;
+
+
+}
+
+
+body {
+    font: 1em sans-serif;
+    
+    
+}
+
+header{
+    height: 36px;
+    width: auto;
+    
+
+}
+
+.header-container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+
+    height: 50px;
+
+    background-color: rgba(203, 220, 209, 1);
+    border: 2px solid whitesmoke;
+    border-radius: 25px;
+
+    
+}
+
+.header-b1 {
+    width: 100px;
+    border: 2px solid white;
+    border-right: none;
+    border-start-start-radius: 10px;
+
+    
+}
+
+.header-b2 {
+    width: calc(100px);
+    height: auto;
+    border: 2px solid white;
+
+
+}
+
+.header-b3 {
+    width: 100px;
+    height: auto;
+    border: 2px solid white;
+    border-left: none;
+    border-end-end-radius: 10px;
+
+}
+
+button {
+    background-color: rgba(245, 222, 179, 0);
+    width: 100px;
+    border: 10px;
+    color: rgb(28, 23, 23);
+    font-weight: bold;
+    transition: ease-in-out 0.4s;
+    -webkit-transition: ease-in-out 0.2s;
+
+}
+
+button:hover {
+    background-color: black;
+    color: gainsboro;
+    border-radius: 10px;
+    box-shadow: 0 10px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+    cursor: pointer;
+    
+    
+}
+
+.main_index {
+
+    margin-top: 550px;
+    font-size: 22px;
+    
+}
+
+footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 98%;
+    height: 50px;
+    background-color: rgba(121, 174, 161, 0.519);
+    color: rgb(28, 23, 23);
+    text-align: center;
+
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+
+    border: 2px solid whitesmoke;
+    border-radius: 25px;
+}
+
+.footer-container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+
+    height: 50px;
+
+    background-color: rgba(203, 220, 209, 1);
+    border: 2px solid whitesmoke;
+    border-radius: 25px;
+
+}
+    

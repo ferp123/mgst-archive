@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar System Showcase</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body { margin: 0; }
+        canvas { display: block; }
+        #ui-container {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="ui-container">
+        <div>
+            <label for="sunlight">Sunlight Intensity:</label>
+            <input type="range" id="sunlight" min="200" max="2000" step="0.1" value="1000">
+        </div>
+        <div>
+            <label for="ambient">Ambient Light Intensity:</label>
+            <input type="range" id="ambient" min="0" max="10" step="0.05" value="7">
+        </div>
+        <div>
+            <label for="orbit-speed">Orbit Speed:</label>
+            <input type="range" id="orbit-speed" min="0" max="8" step="1" value="0">
+        </div>
+        <div>
+            <label for="orbit-path-opacity">Orbit Path Opacity:</label>
+            <input type="range" id="orbit-path-opacity" min="0" max="1" step="0.01" value="0.2">
+          </div>
+        <div id="planet-buttons"></div>
+        <button id="toggle-asteroids">Toggle Asteroids</button>
+
+        <div>
+            <label for="background-select">Background:</label>
+            <select id="background-select">
+              <option value="starsAndMilkyWay">Stars</option>
+              <option value="stars" selected>Stars and Milky way</option>
+            </select>
+          </div>
+        <div id="day-counter">Earth Days: 0</div>
+        <div id="earth-textures">
+            <h3>Earth Textures</h3>
+            <label><input type="checkbox" id="earth-daymap" checked> Day Map</label>
+            <label><input type="checkbox" id="earth-normalmap" checked> Normal Map</label>
+            <label><input type="checkbox" id="earth-specular" checked> Specular Map</label>
+            <label><input type="checkbox" id="earth-displacement" checked> Displacement Map</label>
+            <label><input type="checkbox" id="earth-clouds" checked> Clouds</label>
+        </div>
+        <div id="earth-texture-controls"></div>
+            <h3>Earth Texture Controls</h3>
+            <div>
+                <label for="earth-normalscale">Normal Scale:</label>
+                <input type="range" id="earth-normalscale" min="0" max="1" step="0.01" value="0.05">
+            </div>
+            <div>
+                <label for="earth-specular-intensity">Specular Intensity:</label>
+                <input type="range" id="earth-specular-intensity" min="0" max="1" step="0.01" value="0.5">
+            </div>
+            <div>
+                <label for="earth-displacement-scale">Displacement Scale:</label>
+                <input type="range" id="earth-displacement-scale" min="-0.1" max="0.1" step="0.001" value="-0.1">
+            </div>
+        </div>    
+    </div>
+
+    <script type="module" src="https://mgst.no/about/Learning/Planets.js">
+        console.log("This is a test log from the inline script");
+        
+        // Check if the Planets object exists
+        if (typeof Planets !== 'undefined') {
+            console.log("Planets object is defined:", Planets);
+        } else {
+            console.log("Planets object is not defined");
+        }
+
+        // Log any errors that occur when trying to load scripts
+        window.addEventListener('error', function(event) {
+            console.error('Script error detected:', event.filename, event.lineno, event.colno, event.error);
+        });
+
+        // Log when the DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log("DOM fully loaded");
+        });
+    </script>
+
+</body>
+</html>
+

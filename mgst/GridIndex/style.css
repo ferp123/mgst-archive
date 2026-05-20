@@ -1,0 +1,189 @@
+html, body {
+    
+    background-color:rgb(252, 249, 238);
+    /* background-image: url(../index/Martin\ Grøtliens\ Samlede\ Tjenester.png); */
+    background-size: 100%;
+    background-attachment: fixed;
+
+    background-repeat: no-repeat;
+    background-position: center 70px;
+    
+
+
+}
+
+
+body {
+
+    color: black;
+    
+}
+
+
+
+.main_index {
+   /* margin-top: 650px; */
+   color: black;
+
+    
+    
+}
+
+.main-container {
+    display: grid;
+    grid-auto-rows: minmax(12px, auto);
+    grid-template-columns: 1fr 1fr 1fr;
+
+    margin-top: 10px;
+    min-height: 88vh;
+    background-color: rgba(203, 220, 207, 0.8);
+
+    border: 1px solid white;
+    border-radius: 25px;
+
+
+
+ 
+}
+
+.main-b1 { /* martin grøtliens samlede tjenester */
+
+    grid-column: 1 / -1;
+    grid-row: 1;
+
+    text-align: center;
+    font-weight: lighter;
+    letter-spacing: 12px;
+
+    border-bottom: 1px solid;
+
+    align-content: end;
+
+
+    width: 100%;
+    min-height: 142px;
+    font-size: 48px;
+}
+
+.main-b2 { /* MGST */
+
+    grid-column: 1 / -1;
+    grid-row: 2;
+
+    text-align: center;
+    font-weight: lighter;
+    letter-spacing: 30px;
+
+    align-content: center;
+
+    border-bottom: 1px solid black;
+
+
+    /* font-size: 380px; */
+
+    font-size:calc(100% + 20vw);
+
+    color: rgba(255, 255, 255, 0.379);
+}
+
+.main-b3 { /* mail + telefon + adresse */
+
+    grid-column: 1 / -1;
+    grid-row: 3;
+
+    text-align: center;
+    font-weight: lighter;
+    letter-spacing: 2px;
+
+    align-content: end;
+    font-size: 20px;
+
+
+
+
+    color: rgba(0, 0, 0, 0.633);
+}
+
+.nr {
+    transition: none;
+    font-size: 20px;
+    font-style: oblique;
+    text-decoration: none;
+    
+
+}
+
+.main-b4 { /* lyd */
+    grid-column: 1 / 2;
+    grid-row: 4;
+
+    font-size: 16px;
+    text-align: center;
+    align-content: end;
+    padding-top: 2px;
+
+
+    background-color: grey;
+    
+    color: rgba(233, 232, 232, 0.726);
+    margin-left: 22px;
+    margin-right: 15px;
+
+    border-start-end-radius: 10px;
+    border-end-start-radius: 10px;
+
+    max-height: 20px;
+    align-self: end;
+
+}
+
+.main-b5 { /* scene */
+    grid-column: 2 / 3;
+    grid-row: 4;
+
+    font-size: 16px;
+    text-align: center;
+    align-content: end;
+    padding-top: 2px;
+
+
+    background-color: grey;
+
+
+    color: rgba(233, 232, 232, 0.726);
+
+    margin-left: 10px;
+    margin-right: 10px;
+
+    border-start-start-radius: 10px;
+    border-start-end-radius: 10px;
+
+    max-height: 20px;
+    align-self: end;
+
+
+}
+.main-b6 { /* transport */
+    grid-column: 3 / -1;
+    grid-row: 4;
+
+    font-size: 16px;
+    text-align: center;
+    align-content: end;
+    padding-top: 2px;
+
+    background-color: grey;
+
+    color: rgba(233, 232, 232, 0.726);
+    margin-left: 15px;
+    margin-right: 22px;
+    border-end-end-radius: 10px;
+    border-start-start-radius: 10px;
+
+
+    max-height: 20px;
+    align-self: end;
+
+
+
+}
