@@ -1,4 +1,4 @@
-import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.176.0/build/three.module.js';
+import * as THREE from 'three';
 
 import { planetConfig } from "./config.js";
 
@@ -63,7 +63,7 @@ export class PlanetSystem {
 
     earth.rotateOnAxis(
       new THREE.Vector3(0, 1, 0),
-      (config.tilt * Math.PI) / 180
+      (config.tilt * Math.PI) / 180,
     );
 
     console.log("Earth object created:", earth);
@@ -71,7 +71,7 @@ export class PlanetSystem {
     const cloudGeometry = new THREE.SphereGeometry(
       config.radius * config.cloudScale,
       1024,
-      1024
+      1024,
     );
     console.log("Cloud geometry created:", cloudGeometry);
 
@@ -174,9 +174,9 @@ export class PlanetSystem {
           planet.rotateOnAxis(
             new THREE.Vector3(0, 1, 0).applyAxisAngle(
               new THREE.Vector3(0, 0, 1),
-              (23 * Math.PI) / 180
+              (23 * Math.PI) / 180,
             ),
-            earthYearAngle * 365.25 // Earth rotates 365.25 times per orbit
+            earthYearAngle * 365.25, // Earth rotates 365.25 times per orbit
           );
 
           this.earthAngle = angle;
@@ -211,7 +211,7 @@ export class PlanetSystem {
         const orbitGeometry = new THREE.BufferGeometry().setFromPoints(
           new THREE.Path()
             .absarc(0, 0, orbitRadius, 0, Math.PI * 2, true)
-            .getPoints(128)
+            .getPoints(128),
         );
         const orbitMaterial = new THREE.LineBasicMaterial({
           color: 0xffffff,

@@ -1,18 +1,24 @@
-import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.176.0/build/three.module.js';
-import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.176.0/examples/jsm/controls/OrbitControls.js';
-
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
 import { PlanetSystem } from "./PlanetSystem.js";
 import { planetConfig } from "./config.js";
 
 class SolarSystemSimulation {
-  constructor(radius, texture, position, rotationSpeed, orbitRadius, orbitSpeed) {
+  constructor(
+    radius,
+    texture,
+    position,
+    rotationSpeed,
+    orbitRadius,
+    orbitSpeed,
+  ) {
     this.scene = new THREE.Scene();
     this.camera = new THREE.PerspectiveCamera(
       75,
       window.innerWidth / window.innerHeight,
       0.1,
-      2000
+      2000,
     );
     this.renderer = new THREE.WebGLRenderer({ antialias: true });
     this.controls = new OrbitControls(this.camera, this.renderer.domElement);
@@ -58,10 +64,10 @@ class SolarSystemSimulation {
 
   createLights() {
     const sunlightIntensity = parseFloat(
-      document.getElementById("sunlight").value
+      document.getElementById("sunlight").value,
     );
     const ambientIntensity = parseFloat(
-      document.getElementById("ambient").value
+      document.getElementById("ambient").value,
     );
 
     this.sunLight = new THREE.PointLight(0xffffff, sunlightIntensity, 200);
@@ -148,11 +154,11 @@ class SolarSystemSimulation {
         this.cameraDistance += event.deltaY * 0.01;
         this.cameraDistance = Math.max(
           this.focusedBody.geometry.parameters.radius * 1.1,
-          this.cameraDistance
+          this.cameraDistance,
         );
         this.cameraDistance = Math.min(
           this.focusedBody.geometry.parameters.radius * 50,
-          this.cameraDistance
+          this.cameraDistance,
         );
         this.savedCameraOffset.setLength(this.cameraDistance);
         this.updateCameraPosition();
@@ -171,7 +177,7 @@ class SolarSystemSimulation {
         !this.planetSystem.asteroidBelt.visible;
       console.log(
         "Asteroid belt visibility:",
-        this.planetSystem.asteroidBelt.visible
+        this.planetSystem.asteroidBelt.visible,
       );
       const button = document.getElementById("toggle-asteroids");
       button.classList.toggle("on", this.planetSystem.asteroidBelt.visible);
@@ -278,7 +284,7 @@ class SolarSystemSimulation {
     const sunButton = document.createElement("button");
     sunButton.textContent = "Sun";
     sunButton.addEventListener("click", () =>
-      this.focusOnCelestialBody(this.sun)
+      this.focusOnCelestialBody(this.sun),
     );
     buttonContainer.appendChild(sunButton);
 
@@ -287,19 +293,19 @@ class SolarSystemSimulation {
       const button = document.createElement("button");
       button.textContent = celestialBody.name;
       button.addEventListener("click", () =>
-        this.focusOnCelestialBody(celestialBody)
+        this.focusOnCelestialBody(celestialBody),
       );
       buttonContainer.appendChild(button);
 
       if (celestialBody.name === "Earth") {
         const moon = celestialBody.children.find(
-          (child) => child.name === "Moon"
+          (child) => child.name === "Moon",
         );
         if (moon) {
           const moonButton = document.createElement("button");
           moonButton.textContent = "Moon";
           moonButton.addEventListener("click", () =>
-            this.focusOnCelestialBody(moon)
+            this.focusOnCelestialBody(moon),
           );
           buttonContainer.appendChild(moonButton);
         }
@@ -313,7 +319,7 @@ class SolarSystemSimulation {
     this.savedCameraOffset.set(
       this.cameraDistance,
       this.cameraDistance,
-      this.cameraDistance
+      this.cameraDistance,
     );
     this.updateCameraPosition();
   }
@@ -350,7 +356,7 @@ class SolarSystemSimulation {
 
         const rotationSpeed = 0.005;
         const spherical = new THREE.Spherical().setFromVector3(
-          this.savedCameraOffset
+          this.savedCameraOffset,
         );
 
         spherical.theta -= deltaMove.x * rotationSpeed;
@@ -378,9 +384,8 @@ class SolarSystemSimulation {
 
   updateDayCounter() {
     const earthDays = Math.floor(this.planetSystem.getEarthDays());
-    document.getElementById(
-      "day-counter"
-    ).textContent = `Earth Days: ${earthDays}`;
+    document.getElementById("day-counter").textContent =
+      `Earth Days: ${earthDays}`;
   }
 }
 
